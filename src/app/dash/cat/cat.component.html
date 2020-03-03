@@ -1,0 +1,49 @@
+<div class="card">
+  <div class="card-header card-header-primary">
+    <h4 class="card-title ">Categories</h4>
+      <p class="card-category">Everything...</p>
+  </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-primary">
+                  <th>
+                    ID
+                  </th>
+                  <th>
+                    Category
+                  </th>
+                  <th>
+                    Description
+                  </th>
+                  <th>
+                    Date
+                  </th>
+                  <th>
+                    Action
+                  </th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let c of catData; let i=index">
+                    <th>{{i+1}}</th>
+                    <th>{{c.category}}</th>
+                    <th>{{c.description}}</th>
+                    <th>{{c.cur_date|date}}</th>
+                    <th><a href="javascript:void()" (click)="delCat(c._id)" class="btn btn-primary">Delete</a></th>
+
+                  </tr>
+
+                </tbody>
+
+              </table>
+
+            </div>
+            <div class="row">
+              <div class="col-md-12 text-center mb-5">
+                <a  routerLink="../addcat"><button class="btn btn-primary">Add Categories</button></a>
+              </div>
+            </div>
+          </div>
+
+
+</div>

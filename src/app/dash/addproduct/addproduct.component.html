@@ -1,0 +1,64 @@
+<div class="card">
+  <div class="card-header card-header-primary">
+    <h4 class="card-title">Add Category</h4>
+    <p class="card-category">Please use the correct spelling.</p>
+  </div>
+  <div class="card-body">
+      <form [formGroup]="myForm" (submit)="addPro()">
+          <div *ngIf="msg">
+            {{msg}}
+          </div>
+         <div class="form-group ">
+           <!-- <label>Category</label>
+           <input type="text" formControlName="category" class="form-control"/> -->
+           <!-- <div class="container">
+              <h2>Form control: select</h2>
+              <p>The form below contains two dropdown menus (select lists):</p>
+              <form action="/action_page.php">
+                <div class="form-group"> -->
+                  <label for="sel1">Category</label>
+                  <select class="form-control" formControlName="category">
+                    <option  *ngFor="let c of catData; let i=index">{{c.category}}</option>
+                   </select>
+         </div>
+         <div class="form-group">
+           <label>Mobile Name</label>
+           <input type="text" formControlName="mname" class="form-control"/>
+         </div>
+         <div class="form-group">
+           <label>Price</label>
+           <input type="number" formControlName="price" class="form-control"/>
+         </div>
+         <div class="form-group">
+           <label>Quantity</label>
+           <input type="number" formControlName="quantity" class="form-control"/>
+         </div>
+         <div class="form-group">
+           <label>Color</label>
+           <input type="text" formControlName="color" class="form-control"/>
+         </div>
+         <div class="form-group">
+           <label>Ram</label>
+           <input type="text" formControlName="ram" class="form-control"/>
+         </div>
+         <div class="form-group">
+           <label>Rom</label>
+           <input type="text" formControlName="rom" class="form-control"/>
+         </div>
+         <div class="form-group">
+           <label>Os</label>
+           <input type="text" formControlName="os" class="form-control"/>
+         </div>
+         <div class="form-group">
+             <label>Features</label>
+             <textarea formControlName="features" class="form-control">
+               </textarea>
+           </div>
+           <div class="form-group">
+               <label>Image</label>
+               <input type="file"  class="form-control" (change)="addImage($event)"/>
+             </div>
+             <input type="submit" value="Submit" class="btn btn-primary" />
+
+       </form>
+  </div>

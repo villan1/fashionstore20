@@ -1,0 +1,21 @@
+<div class="container col-md-11 col-sm-11 mt-4 text-center">
+  <div class="row py-2 text-center custom d-flex justify-content-between px-4">
+      <h1 class="">Latest Product</h1>
+      <button class="btn btn-primary">View More</button>
+    </div>
+  <div class="row">
+    <div class="col-sm-2 col-md-3 col-lg-2 my-3 py-2" *ngFor="let c of proData ;let i=index">
+        <a routerLink="/display/{{c._id}}"><img style="width:100%" src="http://localhost:8899/myimages/{{c.image}}"></a>
+          <a routerLink="/display/{{c._id}}"><p class="my-1">{{c.mname | uppercase}}</p></a>
+          <p class="my-1" style="color:green">{{c.price | currency:'INR':true}}</p>
+          <p class="my-1">{{c.category}}</p>
+          <button class="btn btn-primary my-2" routerLink="../cart" (click)="OnAddCart(c)" >Add to cart</button>
+    </div>
+    <div class="col-md-12">
+
+
+
+
+
+  </div>
+</div>
